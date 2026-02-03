@@ -14,17 +14,18 @@
         margin: 0px;
         box-sizing: border-box;
         font-family: 'Courier New', Courier, monospace;
+        color: white;
     }
 
     .navbar {
-        background-color: rgba(77, 106, 96, 0.5);
+        background-color: rgba(43, 70, 61, 0.5);
         height: 4vh;
         width: auto;
         display: flex;
         justify-content: center;
         align-items: center;
         padding: 0.5em;
-        border-radius: 0 0 0.4em 0.4em;
+        /* border-radius: 0 0 0.4em 0.4em; */
     }
 
     ul {
@@ -33,7 +34,7 @@
 
     a {
         text-decoration: none;
-        color: rgb(25, 20, 20);
+        color: rgb(0, 0, 0);
     }
 
     .nav-items {
@@ -59,12 +60,6 @@
 
     }
 
-    img {
-        width: 100%;
-        height: 100%;
-
-    }
-
     .hero {
         background-image: url("hero.avif");
         background-size: cover;
@@ -85,11 +80,88 @@
     li:hover {
         transform: scale(1.2);
     }
+
+    .info {
+
+        height: 96vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .info_left {
+        width: 55%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 1em;
+        gap: 0.3em;
+    }
+
+    .info {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+    }
+
+    .info_left h1 {
+        font-size: 1.8rem;
+        letter-spacing: 0.05em;
+    }
+
+    .info_left h2 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        letter-spacing: 0.1em;
+    }
+
+    .info_left p {
+        font-size: 1rem;
+        line-height: 1.4;
+        text-align: center;
+        max-width: 80%;
+        opacity: 0.9;
+        letter-spacing: 0.02em;
+        margin-top: 0.8em;
+    }
+
+    .info_right {
+        width: 45%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .r-image {
+        width: auto;
+        height: 99.9%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        border-radius: 1em;
+        /* box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); */
+    }
+
+    .r-image img {
+        width: 100%;
+
+        object-fit: cover;
+        border-radius: 1em;
+    }
 </style>
 
 <body>
     <div class="hero">
-        <!-- <img src="hero.jpeg" alt=""> -->
+
     </div>
     <div class="navbar">
         <div class="nav_left">
@@ -109,6 +181,27 @@
         </div>
 
 
+
+    </div>
+    <div class="info">
+        <div class="info_left">
+            <h1>YO!, I'm</h1>
+            <h2>Karthik</h2>
+            <p>I’m focused and driven, with a calm intensity that keeps me moving forward. I believe in discipline,
+                consistency, and doing the work even when no one is watching. I learn fast, aim higher each day, and
+                refuse to settle for average. I’m not here for noise or shortcuts—I’m here to build skill, strength, and
+                my own identity, one deliberate step at a time.
+
+            </p>
+        </div>
+
+        <div class="info_right">
+            <div class="r-image">
+                <img src="ChatGPT Image Feb 3, 2026, 09_12_55 PM.png">
+            </div>
+
+
+        </div>
     </div>
 
 
