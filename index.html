@@ -7,6 +7,7 @@
     <title>portfolio</title>
 
 </head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
 <style>
     * {
@@ -19,7 +20,7 @@
 
     .navbar {
         background-color: rgba(43, 70, 61, 0.5);
-        height: 4vh;
+        height: 35px;
         width: auto;
         display: flex;
         justify-content: center;
@@ -49,8 +50,7 @@
         width: 60%;
         height: 2em;
         display: flex;
-
-        align-items: center;
+        align-items: flex-end;
     }
 
 
@@ -157,6 +157,72 @@
         object-fit: cover;
         border-radius: 1em;
     }
+
+    .logo {
+        width: 10%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+
+    .bi-brilliance {
+        font-size: x-large;
+
+    }
+
+    .bi-list {
+        display: none;
+    }
+
+    /* ========== RESPONSIVE MEDIA QUERIES ========== */
+    @media (max-width: 780px) {
+        .nav-items {
+            display: none;
+        }
+
+        .bi-list {
+            display: block;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: large;
+            cursor: pointer;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 40px;
+            right: 10px;
+            background: rgba(43, 70, 61, 0.3);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 0.5em;
+            padding: 0.5em 0;
+            min-width: 150px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            z-index: 100;
+        }
+
+        .dropdown-menu.show {
+            display: block;
+        }
+
+        .dropdown-menu li {
+            padding: 0.6em 1em;
+            list-style: none;
+        }
+
+        .dropdown-menu li a {
+            color: white;
+            text-decoration: none;
+        }
+
+
+    }
 </style>
 
 <body>
@@ -165,19 +231,25 @@
     </div>
     <div class="navbar">
         <div class="nav_left">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="1.6em" height="1.6em"
-                class="bi bi-brilliance" viewBox="0 0 16 16" style="color: rgba(233, 243, 251, 0.6);">
-                <path
-                    d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16M1 8a7 7 0 0 0 7 7 3.5 3.5 0 1 0 0-7 3.5 3.5 0 1 1 0-7 7 7 0 0 0-7 7" />
-            </svg>
+
+            <i class="bi bi-brilliance" width></i>
         </div>
         <div class="nav_right">
             <ul class="nav-items">
                 <li id="i1"><a href="#">Home</a></li>
-                <li id="i2"><a href="#">About me</a></li>
-                <li id="i3"><a href="#">Skills</a></li>
+                <li id="i2"><a href="#">Skills</a></li>
+                <li id="i3"><a href="#">About me</a></li>
                 <li id="i4"><a href="#">Contact</a></li>
+
             </ul>
+            <i class="bi bi-list" onclick="toggleDropdown()"></i>
+            <ul class="dropdown-menu" id="dropdownMenu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Skills</a></li>
+                <li><a href="#">About me</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+
         </div>
 
 
@@ -206,6 +278,21 @@
 
 
 
+    <script>
+        function toggleDropdown() {
+            const menu = document.getElementById('dropdownMenu');
+            menu.classList.toggle('show');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function (event) {
+            const menu = document.getElementById('dropdownMenu');
+            const icon = document.querySelector('.bi-list');
+            if (!menu.contains(event.target) && !icon.contains(event.target)) {
+                menu.classList.remove('show');
+            }
+        });
+    </script>
 </body>
 
 </html>
